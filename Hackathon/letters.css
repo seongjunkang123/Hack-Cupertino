@@ -1,0 +1,55 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f4f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+#lettersGame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+#letterInput {
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 10px;
+    width: 50%;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+}
+
+button {
+    font-size: 16px;
+    border-radius: 12px;
+    border: 2px solid #7fadf2;
+    width: 150px;
+    height: 40px;
+    background-color: #b8d0eb;
+    color: #333;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #7fadf2;
+    color: #fff;
+}
+
+h1 {
+    font-size: 100px;
+    margin: 20px 0;
+}
+
+#Correction {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #d9534f;
+}

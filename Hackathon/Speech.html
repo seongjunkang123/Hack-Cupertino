@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voice to GPT</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    #output {
+        width: 80%;
+        text-align: center;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+</style>
+</head>
+<body>
+<div id="output">Press the button and speak</div>
+<button onclick="startRecognition()">Start Speaking</button>
+<script>
+// Check if browser supports the Speech API
+if (!('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)) {
+    document.getElementById('output').textContent = "Your browser does not support Speech Recognition.";
+}
+
+function startRecognition() {
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = 'en-US';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.onresult = (event) => {
+        const speechResult = event.results[0][0].transcript;
+        document.getElementById('output').textContent = "Processing...";
+        console.log("You said: ", speechResult);
+        // Call your server-side to process this with GPT (implement this)
+    };
+
+    recognition.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+        document.getElementById('output').textContent = "Error occurred in recognition: " + event.error;
+    };
+
+    recognition.start();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Spelling Word</title>
+    <link rel="stylesheet" href="letters.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="lettersGame">
+        <button id="homeButton" style="position: absolute; top: 10px; left: 10px;">Back to Home</button> 
+        <h1>Letter</h1>
+        <p>You will hear one letter at a time, type what you hear</p>
+        <p id="startPrompt">Click start when ready</p>
+        <label id="label"></label>
+        <button id="startButton" onclick = "repeat()">Start</button>
+        <input type="text" id="letterInput" placeholder="Type the letter here" hidden>
+        <label id="Correction"></label>
+    </div>
+
+    <script src="letters.js"></script>
+</body>
+</html>
